@@ -3,7 +3,7 @@
   --muted: #68726d;
   --paper: #f1efe8;
   --lime: #d8ed44;
-  --orange: #ee7346;
+  --orange: #ea0707;
   --line: rgba(23, 34, 29, 0.16);
   --display: "Barlow Condensed", Impact, sans-serif;
   --body: "DM Sans", Arial, sans-serif;
@@ -155,7 +155,7 @@ h1 {
 
 h1 em,
 h2 em {
-  color: var(--red);
+  color: var(--orange);
   font-style: normal;
 }
 
