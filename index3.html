@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ficha demostrativa de Mateo Silva, futbolista profesional.">
+  <title>Mateo Silva | Tailwind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { display: ['"Barlow Condensed"', 'Impact', 'sans-serif'], body: ['"DM Sans"', 'Arial', 'sans-serif'] }, colors: { ink: '#17221d', paper: '#f1efe8', lime: '#d8ed44', signal: '#ea0707', muted: '#68726d' } } } }</script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #f1efe8; color: #17221d; }
+    .page-bg { background: linear-gradient(115deg, rgba(255,255,255,.3), transparent 42%), radial-gradient(circle at 80% 12%, rgba(216,237,68,.36), transparent 25%), #f1efe8; }
+    .portrait { position: relative; z-index: 1; width: min(100%, 480px); aspect-ratio: 4 / 5; overflow: hidden; border: 13px solid #17221d; background: #b7c1b9; box-shadow: 22px 22px 0 #ea0707; transform: rotate(3deg); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) contrast(1.08); }
+    .fallback-label { display: none; position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); }
+    .image-fallback .fallback-label { display: block; }
+    @media (max-width: 767px) { .portrait { width: min(100%, 355px); } }
+  </style>
+</head>
+<body class="font-body text-ink">
+  <main class="page-bg min-h-screen overflow-hidden">
+    <nav class="mx-auto flex max-w-[1380px] items-center justify-between border-b border-ink/15 px-6 py-5 md:px-[5vw]" aria-label="Navegación principal">
+      <a class="flex items-center gap-3 no-underline" href="index.html" aria-label="Inicio de la ficha"><span class="grid h-[42px] w-[42px] rotate-[-6deg] place-items-center bg-ink font-display font-extrabold text-lime">MS</span><span class="font-display text-xl font-extrabold tracking-widest">PLAYER<span class="text-signal">01</span></span></a>
+      <span class="text-[10px] font-bold uppercase tracking-[.14em] text-muted"><span class="text-signal">●</span> Temporada 2024/25</span>
+    </nav>
+    <div class="mx-auto flex max-w-[1380px] justify-between border-b border-ink/15 px-6 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-muted md:px-[5vw]"><span class="text-signal">Ficha demostrativa</span><span>Datos no verificados · Junio 2025</span></div>
+
+    <section class="mx-auto grid max-w-[1380px] items-center gap-8 px-6 py-14 md:grid-cols-[.82fr_1.25fr_150px] md:px-[5vw] md:py-20" aria-labelledby="player-name">
+      <div>
+        <p class="mb-5 text-[11px] font-bold uppercase tracking-[.14em] text-signal">Delantero / Argentina</p>
+        <h1 id="player-name" class="font-display text-[clamp(76px,10vw,150px)] font-extrabold uppercase leading-[.82] tracking-[-.035em]">Mateo<br><em class="not-italic text-signal">Silva</em></h1>
+        <p class="my-7 max-w-[285px] text-[15px] leading-[1.6] text-muted">Velocidad, lectura de espacios y una zurda que cambia el ritmo del partido.</p>
+        <div class="mb-8 flex items-center gap-3"><span class="grid h-[42px] w-[42px] place-items-center rounded-full border-2 border-ink font-display font-extrabold">RS</span><div><span class="block text-[9px] font-bold uppercase tracking-[.14em] text-muted">Club actual</span><strong>Racing Sur</strong></div></div>
+        <a class="inline-flex gap-5 bg-ink px-[18px] py-[15px] text-[11px] font-bold uppercase tracking-[.1em] text-lime no-underline transition hover:bg-signal hover:text-white" href="#stats">Ver estadísticas <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="relative grid min-h-[420px] place-items-center md:min-h-[610px]">
+        <div class="absolute h-[245px] w-[245px] rounded-full bg-[repeating-conic-gradient(from_20deg,rgba(216,237,68,.9)_0deg_12deg,transparent_12deg_25deg)] md:h-[330px] md:w-[330px]" aria-hidden="true"></div>
+        <div class="portrait"><img src="assets/player.jpg" alt="Futbolista controlando el balón durante un partido" onerror="this.closest('.portrait').classList.add('image-fallback'); this.remove()"><span class="fallback-label bg-ink px-3 py-2 text-[10px] font-bold uppercase tracking-[.1em] text-lime">Imagen no disponible</span><div class="absolute right-[22px] bottom-[10px] font-display text-[100px] font-extrabold leading-[.8] text-lime">09</div><div class="absolute left-[22px] top-[22px] bg-lime px-2.5 py-2 text-[9px] font-extrabold uppercase tracking-[.13em]">Jugador destacado</div></div>
+      </div>
+      <aside class="grid grid-cols-2 gap-x-5 gap-y-3 md:grid-cols-1 md:gap-5 md:self-end" aria-label="Datos personales">
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">Edad</span><strong class="font-display text-[22px] uppercase">24</strong></div>
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">Altura</span><strong class="font-display text-[22px] uppercase">1.82 m</strong></div>
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">Pie hábil</span><strong class="font-display text-[22px] uppercase">Izquierdo</strong></div>
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">País</span><strong class="font-display text-[22px] uppercase">ARG</strong></div>
+      </aside>
+    </section>
+
+    <section id="stats" class="mx-auto max-w-[1380px] border-t border-ink/15 px-6 py-16 md:px-[5vw]" aria-labelledby="stats-title">
+      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><p class="mb-0 text-[11px] font-bold uppercase tracking-[.14em] text-signal">Rendimiento en liga</p><h2 id="stats-title" class="font-display text-5xl font-extrabold uppercase leading-[.82] md:text-right md:text-7xl">Números que <em class="not-italic text-signal">hablan.</em></h2></div>
+      <div class="grid grid-cols-2 border-l border-t border-ink/15 lg:grid-cols-4">
+        <article class="flex min-h-[150px] flex-col justify-between border-b border-r border-ink/15 bg-lime p-4 md:min-h-[175px] md:p-6"><span class="text-[10px] uppercase tracking-[.14em] text-muted">Goles</span><strong class="font-display text-6xl leading-[.8] md:text-8xl">18</strong><span class="text-[10px] uppercase tracking-[.14em] text-muted">+6 vs. temporada anterior</span></article>
+        <article class="flex min-h-[150px] flex-col justify-between border-b border-r border-ink/15 p-4 md:min-h-[175px] md:p-6"><span class="text-[10px] uppercase tracking-[.14em] text-muted">Asistencias</span><strong class="font-display text-6xl leading-[.8] md:text-8xl">11</strong><span class="text-[10px] uppercase tracking-[.14em] text-muted">En 29 apariciones</span></article>
+        <article class="flex min-h-[150px] flex-col justify-between border-b border-r border-ink/15 p-4 md:min-h-[175px] md:p-6"><span class="text-[10px] uppercase tracking-[.14em] text-muted">Minutos jugados</span><strong class="font-display text-6xl leading-[.8] md:text-8xl">2.184</strong><span class="text-[10px] uppercase tracking-[.14em] text-muted">75% de titularidades</span></article>
+        <article class="flex min-h-[150px] flex-col justify-between border-b border-r border-ink/15 p-4 md:min-h-[175px] md:p-6"><span class="text-[10px] uppercase tracking-[.14em] text-muted">Precisión de pase</span><strong class="font-display text-6xl leading-[.8] md:text-8xl">87<small class="text-[.45em]">%</small></strong><span class="text-[10px] uppercase tracking-[.14em] text-muted">Por encima del promedio</span></article>
+      </div>
+    </section>
+    <footer class="mx-auto flex max-w-[1380px] flex-col gap-2 border-t border-ink/15 px-6 py-5 text-[9px] font-bold uppercase tracking-[.13em] text-muted md:flex-row md:justify-between md:px-[5vw]"><span>RACING SUR <b class="mx-2 text-signal">·</b> FICHA DEMOSTRATIVA</span><span>Revisado: 04/09/2026</span></footer>
+  </main>
+</body>
+</html>
