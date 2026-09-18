@@ -9,10 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { fontFamily: { display: ['"Barlow Condensed"', 'Impact', 'sans-serif'], body: ['"DM Sans"', 'Arial', 'sans-serif'] }, colors: { ink: '#17221d', paper: '#f1efe8', lime: '#d8ed44', signal: '#ea0707', muted: '#68726d' } } } }</script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { display: ['"Barlow Condensed"', 'Impact', 'sans-serif'], body: ['"DM Sans"', 'Arial', 'sans-serif'] }, colors: { ink: '#17221d', paper: '#f1efe8', lime: '#d8ed44', signal: '#b42318', muted: '#52605a' } } } }</script>
   <style>
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: #f1efe8; color: #17221d; }
+    body { margin: 0; background: #f1efe8; color: #17221d; font-size: 16px; }
+    a:focus-visible { outline: 3px solid #b42318; outline-offset: 4px; }
+    .skip-link { position: absolute; top: 1rem; left: 1rem; z-index: 10; transform: translateY(-200%); background: #17221d; color: white; padding: .75rem 1rem; }
+    .skip-link:focus { transform: translateY(0); color: white; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
     .page-bg { background: linear-gradient(115deg, rgba(255,255,255,.3), transparent 42%), radial-gradient(circle at 80% 12%, rgba(216,237,68,.36), transparent 25%), #f1efe8; }
     .portrait { position: relative; z-index: 1; width: min(100%, 480px); aspect-ratio: 4 / 5; overflow: hidden; border: 13px solid #17221d; background: #b7c1b9; box-shadow: 22px 22px 0 #ea0707; transform: rotate(3deg); }
     .portrait img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) contrast(1.08); }
@@ -22,19 +26,20 @@
   </style>
 </head>
 <body class="font-body text-ink">
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
   <main class="page-bg min-h-screen overflow-hidden">
     <nav class="mx-auto flex max-w-[1380px] items-center justify-between border-b border-ink/15 px-6 py-5 md:px-[5vw]" aria-label="Navegación principal">
       <a class="flex items-center gap-3 no-underline" href="index.html" aria-label="Inicio de la ficha"><span class="grid h-[42px] w-[42px] rotate-[-6deg] place-items-center bg-ink font-display font-extrabold text-lime">MS</span><span class="font-display text-xl font-extrabold tracking-widest">PLAYER<span class="text-signal">01</span></span></a>
-      <span class="text-[10px] font-bold uppercase tracking-[.14em] text-muted"><span class="text-signal">●</span> Temporada 2024/25</span>
+      <span class="text-[12px] font-bold uppercase tracking-[.12em] text-muted"><span class="text-signal">●</span> Temporada 2024/25</span>
     </nav>
     <div class="mx-auto flex max-w-[1380px] justify-between border-b border-ink/15 px-6 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-muted md:px-[5vw]"><span class="text-signal">Ficha demostrativa</span><span>Datos no verificados · Junio 2025</span></div>
 
-    <section class="mx-auto grid max-w-[1380px] items-center gap-8 px-6 py-14 md:grid-cols-[.82fr_1.25fr_150px] md:px-[5vw] md:py-20" aria-labelledby="player-name">
+    <section id="main-content" class="mx-auto grid max-w-[1380px] items-center gap-8 px-6 py-14 md:grid-cols-[.82fr_1.25fr_150px] md:px-[5vw] md:py-20" aria-labelledby="player-name" tabindex="-1">
       <div>
-        <p class="mb-5 text-[11px] font-bold uppercase tracking-[.14em] text-signal">Delantero / Argentina</p>
+        <p class="mb-5 text-[12px] font-bold uppercase tracking-[.12em] text-signal">Delantero / Argentina</p>
         <h1 id="player-name" class="font-display text-[clamp(76px,10vw,150px)] font-extrabold uppercase leading-[.82] tracking-[-.035em]">Mateo<br><em class="not-italic text-signal">Silva</em></h1>
         <p class="my-7 max-w-[285px] text-[15px] leading-[1.6] text-muted">Velocidad, lectura de espacios y una zurda que cambia el ritmo del partido.</p>
-        <div class="mb-8 flex items-center gap-3"><span class="grid h-[42px] w-[42px] place-items-center rounded-full border-2 border-ink font-display font-extrabold">RS</span><div><span class="block text-[9px] font-bold uppercase tracking-[.14em] text-muted">Club actual</span><strong>Racing Sur</strong></div></div>
+        <div class="mb-8 flex items-center gap-3"><span class="grid h-[42px] w-[42px] place-items-center rounded-full border-2 border-ink font-display font-extrabold">RS</span><div><span class="block text-[12px] font-bold uppercase tracking-[.12em] text-muted">Club actual</span><strong>Racing Sur</strong></div></div>
         <a class="inline-flex gap-5 bg-ink px-[18px] py-[15px] text-[11px] font-bold uppercase tracking-[.1em] text-lime no-underline transition hover:bg-signal hover:text-white" href="#stats">Ver estadísticas <span aria-hidden="true">↘</span></a>
       </div>
       <div class="relative grid min-h-[420px] place-items-center md:min-h-[610px]">
@@ -42,10 +47,10 @@
         <div class="portrait"><img src="assets/player.jpg" alt="Futbolista controlando el balón durante un partido" onerror="this.closest('.portrait').classList.add('image-fallback'); this.remove()"><span class="fallback-label bg-ink px-3 py-2 text-[10px] font-bold uppercase tracking-[.1em] text-lime">Imagen no disponible</span><div class="absolute right-[22px] bottom-[10px] font-display text-[100px] font-extrabold leading-[.8] text-lime">09</div><div class="absolute left-[22px] top-[22px] bg-lime px-2.5 py-2 text-[9px] font-extrabold uppercase tracking-[.13em]">Jugador destacado</div></div>
       </div>
       <aside class="grid grid-cols-2 gap-x-5 gap-y-3 md:grid-cols-1 md:gap-5 md:self-end" aria-label="Datos personales">
-        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">Edad</span><strong class="font-display text-[22px] uppercase">24</strong></div>
-        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">Altura</span><strong class="font-display text-[22px] uppercase">1.82 m</strong></div>
-        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">Pie hábil</span><strong class="font-display text-[22px] uppercase">Izquierdo</strong></div>
-        <div class="border-b border-ink/15 pb-3"><span class="block text-[10px] uppercase text-muted">País</span><strong class="font-display text-[22px] uppercase">ARG</strong></div>
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[12px] uppercase text-muted">Edad</span><strong class="font-display text-[22px] uppercase">24</strong></div>
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[12px] uppercase text-muted">Altura</span><strong class="font-display text-[22px] uppercase">1.82 m</strong></div>
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[12px] uppercase text-muted">Pie hábil</span><strong class="font-display text-[22px] uppercase">Izquierdo</strong></div>
+        <div class="border-b border-ink/15 pb-3"><span class="block text-[12px] uppercase text-muted">País</span><strong class="font-display text-[22px] uppercase">ARG</strong></div>
       </aside>
     </section>
 
